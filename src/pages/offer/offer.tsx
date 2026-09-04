@@ -1,34 +1,29 @@
-function OfferScreen(): JSX.Element {
+import { Helmet } from 'react-helmet-async';
+import Header from '../../components/shared/header';
+import Feature from './components/feature';
+
+const FEATURES = [
+  'Wi-Fi',
+  'Washing machine',
+  'Towels',
+  'Heating',
+  'Coffee machine',
+  'Baby seat',
+  'Kitchen',
+  'Dishwasher',
+  'Cabel TV',
+  'Fridge'
+];
+
+function Offer(): JSX.Element {
   return (
     <div className="page">
-      <header className="header">
-        <div className="container">
-          <div className="header__wrapper">
-            <div className="header__left">
-              <a className="header__logo-link" href="main.html">
-                <img className="header__logo" src="img/logo.svg" alt="6 cities logo" width="81" height="41"/>
-              </a>
-            </div>
-            <nav className="header__nav">
-              <ul className="header__nav-list">
-                <li className="header__nav-item user">
-                  <a className="header__nav-link header__nav-link--profile" href="#">
-                    <div className="header__avatar-wrapper user__avatar-wrapper">
-                    </div>
-                    <span className="header__user-name user__name">Oliver.conner@gmail.com</span>
-                    <span className="header__favorite-count">3</span>
-                  </a>
-                </li>
-                <li className="header__nav-item">
-                  <a className="header__nav-link" href="#">
-                    <span className="header__signout">Sign out</span>
-                  </a>
-                </li>
-              </ul>
-            </nav>
-          </div>
-        </div>
-      </header>
+
+      <Helmet>
+        <title>Offer</title>
+      </Helmet>
+
+      <Header />
 
       <main className="page__main page__main--offer">
         <section className="offer">
@@ -95,36 +90,9 @@ function OfferScreen(): JSX.Element {
               <div className="offer__inside">
                 <h2 className="offer__inside-title">What&apos;s inside</h2>
                 <ul className="offer__inside-list">
-                  <li className="offer__inside-item">
-                    Wi-Fi
-                  </li>
-                  <li className="offer__inside-item">
-                    Washing machine
-                  </li>
-                  <li className="offer__inside-item">
-                    Towels
-                  </li>
-                  <li className="offer__inside-item">
-                    Heating
-                  </li>
-                  <li className="offer__inside-item">
-                    Coffee machine
-                  </li>
-                  <li className="offer__inside-item">
-                    Baby seat
-                  </li>
-                  <li className="offer__inside-item">
-                    Kitchen
-                  </li>
-                  <li className="offer__inside-item">
-                    Dishwasher
-                  </li>
-                  <li className="offer__inside-item">
-                    Cabel TV
-                  </li>
-                  <li className="offer__inside-item">
-                    Fridge
-                  </li>
+                  {FEATURES.map((feature) => (
+                    <Feature key={feature} feature={feature} />
+                  ))}
                 </ul>
               </div>
               <div className="offer__host">
@@ -336,4 +304,4 @@ function OfferScreen(): JSX.Element {
   );
 }
 
-export default OfferScreen;
+export default Offer;
