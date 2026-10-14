@@ -1,0 +1,1 @@
+import{r,_ as t}from"./index-1bd7e85d.js";const o=r.lazy(()=>t(()=>import("./cities-map-39a02fd2.js"),["assets/cities-map-39a02fd2.js","assets/index-1bd7e85d.js","assets/index-4593f89d.css","assets/cities-map-69420918.css"]));export{o as L};
